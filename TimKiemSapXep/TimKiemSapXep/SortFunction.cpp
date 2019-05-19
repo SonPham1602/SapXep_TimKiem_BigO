@@ -112,3 +112,29 @@ void MergeSort(int a[], int left,int right)
 		Merge(a,left,mid,right);
 	}
 }
+//Thuat Toan 5
+//Quick sort
+void QuickSort(int a[],int left,int right)
+{
+	int i = left, j = right;
+	int pivot = a[(left+right)/2];
+	do 
+	{
+		while (a[i]<pivot && i<right)
+		{
+			i++;
+		}
+		while (a[j]>pivot && i>left)
+		{
+			j--;
+		}
+	} while (i<=j);
+	if (left<j)
+	{
+		QuickSort(a,left,j);
+	}
+	if (i<right)
+	{
+		QuickSort(a,i,right);
+	}
+}
